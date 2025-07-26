@@ -1,54 +1,88 @@
-# 💫 About Me:
-🎓 University Student exploring **Full-Stack Mobile Development**  
-💻 Passionate about **React Native** (Frontend) + **Java Spring Boot** (Backend)  
-🚀 On a journey to become a **skilled Freelancer**, offering mobile & backend solutions  
+<div align="center">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Hamza-ali1223.Hamza-ali1223&"  />
+</div>
 
-### **What I Do**
-- 📱 Build **cross-platform mobile apps** with React Native  
-- ⚙️ Develop **robust backends** using Java & Spring Boot  
-- 🌱 Currently sharpening my **full-stack development** skills  
+###
 
-### **Recent Work**
-- 🛠️ **Developed a full application** (React Native + Java Spring Boot) for a company, handling everything from frontend UI to backend integration  
+<h2 align="left">Hi 👋! My name is Hamza Ali and I'm a react native developer with java backend from Hyderabad PK</h2>
 
-### **My Goals**
-- 💼 Build a **strong GitHub profile** showcasing real-world projects  
-- 🤝 Collaborate, learn, and grow in the developer community  
+###
 
----
+<p align="left">💫 About Me:<br>🎓 University Student exploring Full-Stack Mobile Development<br>💻 Passionate about React Native (Frontend) + Java Spring Boot (Backend)<br>🚀 On a journey to become a skilled Freelancer, offering mobile & backend solutions<br><br>What I Do<br>📱 Build cross-platform mobile apps with React Native<br>⚙️ Develop robust backends using Java & Spring Boot<br>🌱 Currently sharpening my full-stack development skills<br><br>Recent Work<br>🛠️ Developed a full application (React Native + Java Spring Boot) for a company, handling everything from frontend UI to backend integration<br><br>My Goals<br>💼 Build a strong GitHub profile showcasing real-world projects<br>🤝 Collaborate, learn, and grow in the developer community</p>
 
-## 🌐 Socials
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/hamza-ali-notion-obsidian) 
-[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:tenacioushamza@gmail.com)  
+###
 
----
+<div align="left">
+  <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=figma" height="40" alt="figma logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=firebase" height="40" alt="firebase logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=github" height="40" alt="github logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=git" height="40" alt="git logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=gradle" height="40" alt="gradle logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=idea" height="40" alt="intellijidea logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=java" height="40" alt="java logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=linux" height="40" alt="linux logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=mongodb" height="40" alt="mongodb logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=md" height="40" alt="markdown logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=mysql" height="40" alt="mysql logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=nodejs" height="40" alt="nodejs logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=notion" height="40" alt="notion logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=redux" height="40" alt="redux logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=react" height="40" alt="react logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=spring" height="40" alt="spring logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=svg" height="40" alt="svg logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=vscode" height="40" alt="vscode logo"  />
+</div>
 
-## 💻 Tech Stack
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) 
-![Spring Boot](https://img.shields.io/badge/springboot-%236DB33F.svg?style=for-the-badge&logo=springboot&logoColor=white) 
-![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-![React Query](https://img.shields.io/badge/React%20Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white)
-![WebRTC](https://img.shields.io/badge/WebRTC-333333?style=for-the-badge&logo=webrtc&logoColor=white)
-![WebSockets](https://img.shields.io/badge/WebSockets-000000?style=for-the-badge&logo=socket.io&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/postgresql-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/mongodb-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+###
 
----
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Hamza-ali1223&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=radical&locale=en&hide_border=true" height="150" alt="stats graph"  />
+  <img src="https://streak-stats.demolab.com?user=Hamza-ali1223&locale=en&mode=daily&theme=radical&hide_border=true&border_radius=5" height="150" alt="streak graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Hamza-ali1223&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=radical&hide_border=true" height="150" alt="languages graph"  />
+</div>
 
-## 📊 GitHub Stats
-![](https://github-readme-stats.vercel.app/api?username=Hamza-ali1223&theme=codeSTACKr&show_icons=true&hide_border=false&include_all_commits=true&count_private=true&cache_seconds=1000)  
-![](https://github-readme-streak-stats.herokuapp.com?user=Hamza-ali1223&theme=codeSTACKr&hide_border=false&cache_seconds=1000)  
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Hamza-ali1223&theme=codeSTACKr&hide_border=false&layout=compact&cache_seconds=1000)
+###
 
----
+<div align="center">
+  <img height="165" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGU3bjB3d3luMmRsMWR0NTA3M2U4bTl3cDVhMzI4eWw1YXNrcGx3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qb1eHxhUHLdsc/giphy.gif"  />
+</div>
 
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+###
 
----
+<div align="left">
+  <a href="tenacioushamza@gmail.com" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
+  </a>
+  <a href="https://www.linkedin.com/in/hamza-ali-notion-obsidian/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
+  </a>
+</div>
 
-[![](https://visitcount.itsvg.in/api?id=Hamza-ali1223&icon=4&color=0)](https://visitcount.itsvg.in)
+###
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/output/pacman-contribution-graph.svg">
+</picture>
+
+###
