@@ -63,8 +63,9 @@
 ###
 
 <div align="center">
-  <img height="165" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGU3bjB3d3luMmRsMWR0NTA3M2U4bTl3cDVhMzI4eWw1YXNrcGx3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qb1eHxhUHLdsc/giphy.gif"  />
+  <img height="165" src="https://media.giphy.com/media/qb1eHxhUHLdsc/giphy.gif" alt="fun gif" />
 </div>
+
 
 ###
 
