@@ -12,6 +12,13 @@
 
 ###
 
+<div align="center">
+  <img src="https://pixabay.com/gifs/get/g1a0ced50727632a65f77ee1591e033b817e416a536008e147bfcef82231d096f9e37ce4aadc375bac2fdfc03585258bfd8052ba15dc4d079b2e062a0c669e7fa245dcdc28098eac3ddaee48e04a3a8fb.gif" alt="cool animation" width="100%" />
+</div>
+
+
+
+###
 <div align="left">
   <img src="https://skillicons.dev/icons?i=docker" height="40" alt="docker logo"  />
   <img width="12" />
@@ -62,9 +69,6 @@
 
 ###
 
-<div align="center">
-  <img height="165" src="https://pixabay.com/gifs/get/g259af5b232237ef9e538a4ee2584330695555ce76976387957aa7681c5cd34af9bb2bd96f496025e49fcd8bc2523e7e0c2d39173cce3004d8c5ca6184686ebeb3f52a17bc578465956aebeac534e50f7_256.gif" alt="cool animation" />
-</div>
 
 
 
