@@ -2,15 +2,46 @@
   <img src="https://visitor-badge.laobi.icu/badge?page_id=Hamza-ali1223.Hamza-ali1223&"  />
 </div>
 
-###
+# Java backend developer focused on building scalable backend systems using the Spring ecosystem.
 
-<h2 align="left">Hi 👋! My name is Hamza Ali and I'm a react native developer with java backend from Hyderabad PK</h2>
+I work primarily on backend architecture, API design, and distributed systems. My projects focus on real system behavior such as service communication, event-driven workflows, and containerized deployments.
 
-###
+## Core Technologies
 
-<p align="left">💫 About Me:<br>🎓 University Student exploring Full-Stack Mobile Development<br>💻 Passionate about React Native (Frontend) + Java Spring Boot (Backend)<br>🚀 On a journey to become a skilled Freelancer, offering mobile & backend solutions<br><br>What I Do<br>📱 Build cross-platform mobile apps with React Native<br>⚙️ Develop robust backends using Java & Spring Boot<br>🌱 Currently sharpening my full-stack development skills<br><br>Recent Work<br>🛠️ Developed a full application (React Native + Java Spring Boot) for a company, handling everything from frontend UI to backend integration<br><br>My Goals<br>💼 Build a strong GitHub profile showcasing real-world projects<br>🤝 Collaborate, learn, and grow in the developer community</p>
+Java  
+Spring Boot  
+Spring Security  
+Microservices architecture  
+Kafka event streaming  
+REST APIs  
+Docker  
+PostgreSQL and MySQL  
 
-###
+## Key Projects
+
+SOFI Check  
+A RAG-based system that analyzes software project ideas and identifies similar historical projects using vector embeddings and semantic search. Built with Spring Boot backend and deployed with cloud infrastructure.
+
+PulseTrack Patient System  
+A distributed backend system built using Spring Boot microservices with Kafka event communication and gRPC service interaction. The system models real-world healthcare workflows with event-driven processing and service isolation.
+
+DocSpot Appointment App  
+A mobile and backend system built with React Native and Spring Boot to support appointment scheduling and real-time communication.
+
+## What I Focus On
+
+Backend system architecture  
+Scalable service design  
+Event-driven systems  
+Clean service boundaries  
+Reliable backend infrastructure
+
+## Currently Exploring
+
+Advanced backend architecture patterns  
+Distributed systems design  
+Backend performance and scalability
+
 
 <div align="center">
   <img src="https://pixabay.com/gifs/get/g1a0ced50727632a65f77ee1591e033b817e416a536008e147bfcef82231d096f9e37ce4aadc375bac2fdfc03585258bfd8052ba15dc4d079b2e062a0c669e7fa245dcdc28098eac3ddaee48e04a3a8fb.gif" alt="cool animation" width="100%" />
