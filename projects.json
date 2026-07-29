@@ -57,7 +57,7 @@
     },
     {
       "name": "DocSpot",
-      "repo": null,
+      "repo": "Hamza-ali1223/Docspot-Application",
       "blurb": "Appointment scheduling with the calls attached — OAuth2 across mobile and backend, WebSocket signalling for the consultation.",
       "tags": [
         "React Native",
@@ -68,7 +68,12 @@
         "TypeScript": 58,
         "Java": 42
       },
-      "cache": {}
+      "cache": {
+        "stars": 0,
+        "forks": 0,
+        "pushed_at": "2025-07-18",
+        "url": "https://github.com/Hamza-ali1223/Docspot-Application"
+      }
     }
   ]
 }

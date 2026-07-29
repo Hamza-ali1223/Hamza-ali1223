@@ -3,8 +3,9 @@
 Concept: a botanical specimen plate whose specimen is a service topology. The
 plate supplies the presentation language (double-rule frame, section numbering,
 aligned annotation labels with leader lines, italic figure caption); the branch
-diagram supplies the subject -- the real PulseTrack topology, drawn as if from
-life.
+diagram supplies the subject -- a generic backend topology rather than any one
+project's service names, so the plate stays true of the next system as well as
+the last.
 
 All motion is SMIL. Line work arrives by animating stroke-dashoffset so the
 structure draws itself on; type arrives with a translate+opacity rise. The
@@ -38,12 +39,15 @@ NAME_Y, NAME_SIZE = 182, 72
 CAP_RULE_Y = 202
 ROLE_Y, STACK_Y, STATUS_Y = 230, 256, 290
 
-# Branch tips, drawn from the real PulseTrack service topology.
+# The four concerns every backend I build comes down to, ordered top to bottom
+# as a request travels: in through the APIs, across the services, out onto the
+# bus, down into storage. Deliberately not the service names of any one project
+# -- the plate should still be true of the next system as well as the last.
 BRANCHES = [
-    ("BILLING",   "M215 205C262 205 272 152 318 139C348 131 378 130 405 129", 405, 129, 300),
-    ("ANALYTICS", "M215 205C255 205 264 181 302 173C332 167 358 166 385 165", 385, 165, 260),
-    ("NOTIFY",    "M215 205C255 205 264 229 302 237C332 243 358 244 385 245", 385, 245, 260),
-    ("AUTH",      "M215 205C262 205 272 258 318 271C348 279 378 280 405 281", 405, 281, 300),
+    ("REST APIs",     "M215 205C262 205 272 152 318 139C348 131 378 130 405 129", 405, 129, 300),
+    ("MICROSERVICES", "M215 205C255 205 264 181 302 173C332 167 358 166 385 165", 385, 165, 260),
+    ("EVENT STREAMS", "M215 205C255 205 264 229 302 237C332 243 358 244 385 245", 385, 245, 260),
+    ("DATA LAYER",    "M215 205C262 205 272 258 318 271C348 279 378 280 405 281", 405, 281, 300),
 ]
 
 TRUNK = "M95 205C130 205 172 203 215 205"
@@ -66,8 +70,8 @@ def build(name: str) -> str:
         W, H,
         "Hamza Ali — Backend Architect · Systems Thinker",
         "A botanical specimen plate in which the specimen is a distributed "
-        "system: a branching diagram labelled with the services of the PulseTrack "
-        "backend.",
+        "system: a branching diagram running from client through REST APIs, "
+        "microservices, event streams and the data layer.",
         "Hamza Ali — Backend Architect and Systems Thinker",
     )]
     p += plate.ground(t, tl, uid, W, H)
@@ -94,7 +98,7 @@ def build(name: str) -> str:
     p.append(tl.group(
         f'<path d="M{JUNCTION_X} {AXIS_Y + 9}V{AXIS_Y + 36}" stroke="{line_c}" '
         f'stroke-opacity="{strong_o}" stroke-width="1"/>', 1.9, 0.45))
-    p.append(tl.mono("KAFKA BUS", JUNCTION_X, AXIS_Y + 52, 11, accent, 2.0,
+    p.append(tl.mono("EVENT BUS", JUNCTION_X, AXIS_Y + 52, 11, accent, 2.0,
                      anchor="middle", track=0.5))
 
     # Source node.
@@ -104,7 +108,7 @@ def build(name: str) -> str:
     p.append(tl.group(
         f'<path d="M{TRUNK_X} {AXIS_Y - 9}V{AXIS_Y - 32}" stroke="{line_c}" '
         f'stroke-opacity="{strong_o}" stroke-width="1"/>', 1.05, 0.45))
-    p.append(tl.mono("PATIENT", TRUNK_X, AXIS_Y - 42, 11, soft, 1.15,
+    p.append(tl.mono("CLIENT", TRUNK_X, AXIS_Y - 42, 11, soft, 1.15,
                      anchor="middle", track=0.5))
 
     # --- caption block -----------------------------------------------------

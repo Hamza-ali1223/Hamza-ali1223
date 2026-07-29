@@ -109,6 +109,74 @@ def refresh_projects(doc):
         print(f"  + {slug}  ★{cache['stars']}  pushed {cache['pushed_at']}")
 
 
+def count(q):
+    """total_count for a search query, or None if the request failed.
+
+    The search API has its own rate limit (10/min anonymous, 30/min with a
+    token), separate from the core limit the other calls draw on.
+    """
+    res = api(f"/search/issues?q={q}&per_page=1")
+    return res.get("total_count") if res else None
+
+
+def refresh_stats(doc):
+    """Everything the dead github-readme-stats cards used to show.
+
+    All of it is reachable unauthenticated, which matters: a local run without
+    a token still produces a complete plate.
+    """
+    user = doc.get("user")
+    cache = dict(doc.get("cache") or {})
+
+    who = api(f"/users/{user}")
+    if who:
+        cache.update({
+            "public_repos": who.get("public_repos", 0),
+            "followers": who.get("followers", 0),
+            "since": (who.get("created_at") or "")[:4],
+        })
+
+    repos = api(f"/users/{user}/repos?per_page=100&sort=pushed")
+    if repos is not None:
+        own = [r for r in repos if not r.get("fork")]
+        cache["own_repos"] = len(own)
+        cache["stars"] = sum(r.get("stargazers_count", 0) for r in repos)
+
+        # Real byte counts per language, aggregated. Capped at 20 repos so an
+        # anonymous run cannot burn the 60/hr core limit on one profile.
+        #
+        # exclude_repos exists because a single repo with vendored or generated
+        # code buried in it will dominate a byte-weighted chart and misdescribe
+        # what you actually write. It is empty by default -- excluding a repo is
+        # a judgement call, so it stays an explicit one.
+        skip = {s.lower() for s in doc.get("exclude_repos", [])}
+        agg = {}
+        for r in sorted(own, key=lambda r: -r.get("size", 0))[:20]:
+            if r["name"].lower() in skip:
+                continue
+            langs = api(f"/repos/{r['full_name']}/languages")
+            if not langs:
+                continue
+            for k, v in langs.items():
+                agg[k] = agg.get(k, 0) + v
+        if agg:
+            top = sorted(agg.items(), key=lambda kv: -kv[1])[:5]
+            cache["languages"] = dict(top)
+
+    for key, q in (
+        ("prs", f"author:{user}+type:pr"),
+        ("prs_merged", f"author:{user}+type:pr+is:merged"),
+    ):
+        n = count(q)
+        if n is not None:
+            cache[key] = n
+
+    doc["cache"] = cache
+    print(f"  + {user}  {cache.get('public_repos', '?')} repos  "
+          f"★{cache.get('stars', '?')}  {cache.get('followers', '?')} followers  "
+          f"{cache.get('prs_merged', '?')}/{cache.get('prs', '?')} PRs merged")
+
+
 def load(name):
     path = ROOT / name
     return path, json.loads(path.read_text(encoding="utf-8"))
@@ -135,6 +203,7 @@ def main():
     for name, refresh in (
         ("contributions.json", refresh_contributions),
         ("projects.json", refresh_projects),
+        ("stats.json", refresh_stats),
     ):
         path, doc = load(name)
         print(f"{name}:")

@@ -6,7 +6,7 @@
 
 ###
 
-## § 01 — About
+## 01 — About
 
 Java backend developer working on distributed systems in the Spring ecosystem.
 
@@ -16,7 +16,7 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 
 ###
 
-## § 02 — Upstream
+## 02 — Upstream
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/contributions-dark.svg">
@@ -26,7 +26,7 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 
 ###
 
-## § 03 — Work
+## 03 — Work
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/projects-dark.svg">
@@ -36,7 +36,7 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 
 ###
 
-## § 04 — Stack
+## 04 — Stack
 
 <div align="left">
   <img src="https://skillicons.dev/icons?i=java,spring,gradle,kafka,docker,linux,git,github&theme=dark" height="40" alt="Java, Spring, Gradle, Kafka, Docker, Linux, Git, GitHub" />
@@ -50,12 +50,20 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 
 ###
 
-## § 05 — Numbers
+## 05 — Numbers
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/stats-light.svg">
+  <img alt="GitHub statistics and language mix" src="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/stats-dark.svg" width="100%">
+</picture>
 
 <div align="center">
-  <img height="160" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=Hamza-ali1223&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0B1F17&title_color=FF6B35&text_color=A8BCAE&icon_color=6B8A76" />
-  <img height="160" alt="Contribution streak" src="https://streak-stats.demolab.com?user=Hamza-ali1223&mode=daily&hide_border=true&background=0B1F17&ring=FF6B35&fire=FF6B35&currStreakNum=E2E9E3&currStreakLabel=FF6B35&sideNums=A8BCAE&sideLabels=A8BCAE&dates=6B8A76" />
-  <img height="160" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs?username=Hamza-ali1223&layout=compact&card_width=320&langs_count=6&hide_border=true&bg_color=0B1F17&title_color=FF6B35&text_color=A8BCAE" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Hamza-ali1223&mode=daily&hide_border=true&background=0B1F17&stroke=1A3327&ring=FF6B35&fire=FF6B35&currStreakNum=E2E9E3&currStreakLabel=FF6B35&sideNums=A8BCAE&sideLabels=A8BCAE&dates=6B8A76">
+    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=Hamza-ali1223&mode=daily&hide_border=true&background=EDE8DF&stroke=D9D2C6&ring=C8501E&fire=C8501E&currStreakNum=161412&currStreakLabel=C8501E&sideNums=3A3631&sideLabels=3A3631&dates=7A736A">
+    <img height="170" alt="Contribution streak" src="https://streak-stats.demolab.com?user=Hamza-ali1223&mode=daily&hide_border=true&background=0B1F17&stroke=1A3327&ring=FF6B35&fire=FF6B35&currStreakNum=E2E9E3&currStreakLabel=FF6B35&sideNums=A8BCAE&sideLabels=A8BCAE&dates=6B8A76">
+  </picture>
 </div>
 
 ###
@@ -68,7 +76,7 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 
 ###
 
-## § 06 — Contact
+## 06 — Contact
 
 <div align="left">
   <a href="mailto:tenacioushamza@gmail.com">
@@ -87,11 +95,16 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 
     contributions.json  ->  assets/contributions-*.svg
     projects.json       ->  assets/projects-*.svg
+    stats.json          ->  assets/stats-*.svg
     build_banner.py     ->  assets/banner-*.svg
 
   To add a contribution or a project, edit the JSON and nothing else. The
   workflow in .github/workflows/panels.yml refreshes live GitHub data and
-  rebuilds all six SVGs every 6 hours, committing only when the bytes change.
+  rebuilds all eight SVGs every 6 hours, committing only when the bytes change.
+
+  05 used to be three github-readme-stats cards. Its public Vercel deployment
+  answers 503 DEPLOYMENT_PAUSED whenever it trips the free tier, so two of the
+  three were permanently broken images. Plate IV replaces them from the REST API.
 
   Everything animates in SMIL, with no CSS or JS, because GitHub renders these
   in image context. Glyphs are outlined for the same reason -- a webfont would

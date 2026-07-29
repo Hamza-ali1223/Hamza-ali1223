@@ -39,6 +39,20 @@ LIGHT = {
 THEMES = {"dark": DARK, "light": LIGHT}
 
 
+def ramp(t: dict, n: int = 4) -> list:
+    """Series colours for charts, brightest first.
+
+    Deliberately palette-derived rather than GitHub Linguist's brand colours:
+    Linguist's Java orange and TypeScript blue would fight the forest ground and
+    undo the point of having a palette at all. Past the third stop the ramp just
+    fades mute toward paper, which is enough separation for a legend.
+    """
+    stops = [t["accent"], t["specimen"], t["mute"]]
+    fades = (0.45, 0.62, 0.75, 0.84)
+    stops += [mix(t["mute"], t["paper"], f) for f in fades]
+    return stops[:max(n, 1)]
+
+
 def mix(a: str, b: str, t: float) -> str:
     """Blend two hex colours, t=0 -> a, t=1 -> b.
 

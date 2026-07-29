@@ -92,7 +92,7 @@ def build(name, doc):
         f"Open source contributions: {n} pull requests, {merged} merged",
     )]
     p += plate.ground(t, tl, uid, W, h)
-    p += plate.header(t, tl, "§ 01", "PLATE II  ·  UPSTREAM", PAD_L, PAD_R,
+    p += plate.header(t, tl, "§ 02", "PLATE II  ·  UPSTREAM", PAD_L, PAD_R,
                       HEAD_Y, HEAD_RULE_Y)
 
     # --- the stock ---------------------------------------------------------

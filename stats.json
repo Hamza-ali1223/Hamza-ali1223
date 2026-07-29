@@ -1,0 +1,25 @@
+{
+  "figure": "fig. 4 — the tally, counted from the public record",
+  "user": "Hamza-ali1223",
+  "exclude_repos": [
+    "Atlas"
+  ],
+  "exclude_note": "Repo names listed here are left out of the language chart only — the counts above still include them. Use it for repos with vendored or generated code that would otherwise dominate a byte-weighted chart. Currently 'Atlas' (an old React Native experiment) contributes ~2.2 MB of TypeScript that would otherwise drown out the Java work.",
+  "note": "Replaces the github-readme-stats cards, whose public Vercel deployment returns 503 DEPLOYMENT_PAUSED whenever it exceeds free-tier limits. Everything under \"cache\" is written by .github/scripts/fetch_data.py — don't hand-edit it.",
+  "cache": {
+    "public_repos": 40,
+    "followers": 16,
+    "since": "2023",
+    "own_repos": 25,
+    "stars": 2,
+    "languages": {
+      "TypeScript": 240844,
+      "Java": 364223,
+      "Python": 152019,
+      "JavaScript": 99018,
+      "CSS": 16568
+    },
+    "prs": 4,
+    "prs_merged": 3
+  }
+}

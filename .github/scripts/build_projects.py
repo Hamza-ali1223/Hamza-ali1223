@@ -23,7 +23,7 @@ from pathlib import Path
 
 import plate
 from plate import Timeline
-from theme import THEMES, mix
+from theme import THEMES, ramp
 from typeset import fit, measure, path, wrap
 
 ROOT = Path(__file__).resolve().parent.parent.parent
@@ -47,12 +47,6 @@ LEGEND_DY, LEGEND_LEAD = 190, 17
 ACTIVITY_DY = 250
 
 FRESH_DAYS = 90                  # "recently updated" threshold
-
-
-def donut_stops(t):
-    """Four palette stops, brightest first -- largest language gets the accent."""
-    return [t["accent"], t["specimen"], t["mute"],
-            mix(t["mute"], t["paper"], 0.45)]
 
 
 def star(cx, cy, r=5.0):
@@ -86,7 +80,7 @@ def donut(cx, cy, langs, t, tl, begin):
     degenerate single-language case -- a 100% arc would have start == end and
     render as nothing.
     """
-    stops = donut_stops(t)
+    stops = ramp(t, len(langs))
     total = sum(langs.values()) or 1
     gap = 0.06
     out, a = [], 0.0
@@ -159,7 +153,7 @@ def card(x, w, prj, t, tl, begin):
         cx, cy = tx + DONUT_R + 4, CARD_Y + DONUT_DY
         p += donut(cx, cy, langs, t, tl, begin + 0.7)
 
-        stops = donut_stops(t)
+        stops = ramp(t, len(langs))
         total = sum(langs.values()) or 1
         lx = cx + DONUT_R + 22
         for i, (nm, v) in enumerate(list(langs.items())[:3]):
@@ -216,7 +210,7 @@ def build(name, doc):
         "Projects: " + ", ".join(x.get("name", "") for x in projects),
     )]
     p += plate.ground(t, tl, uid, W, h)
-    p += plate.header(t, tl, "§ 02", "PLATE III  ·  WORK", PAD_L, PAD_R,
+    p += plate.header(t, tl, "§ 03", "PLATE III  ·  WORK", PAD_L, PAD_R,
                       HEAD_Y, HEAD_RULE_Y)
 
     for i, prj in enumerate(projects):
