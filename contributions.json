@@ -1,0 +1,40 @@
+{
+  "figure": "fig. 2 — grafts taken upstream",
+  "upstream": "OtterMind/Chat2DB",
+  "note": "Add a contribution by appending repo + pr + tags. Everything under \"cache\" is written by .github/scripts/fetch_data.py — don't hand-edit it.",
+  "contributions": [
+    {
+      "repo": "OtterMind/Chat2DB",
+      "pr": 2179,
+      "tags": [
+        "Java",
+        "persistence",
+        "bugfix"
+      ],
+      "cache": {
+        "title": "fix(datasource): persist BigQuery project, email, and keyfile fields",
+        "state": "merged",
+        "additions": 18,
+        "deletions": 0,
+        "changed_files": 2,
+        "merged_at": "2026-07-28"
+      }
+    },
+    {
+      "repo": "OtterMind/Chat2DB",
+      "pr": 2054,
+      "tags": [
+        "Docs",
+        "onboarding"
+      ],
+      "cache": {
+        "title": "docs(bigquery): add Community BigQuery connection guide (#1698)",
+        "state": "merged",
+        "additions": 130,
+        "deletions": 0,
+        "changed_files": 2,
+        "merged_at": "2026-07-25"
+      }
+    }
+  ]
+}

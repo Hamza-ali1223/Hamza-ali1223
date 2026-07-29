@@ -1,0 +1,66 @@
+name: Rebuild profile panels
+
+on:
+  schedule:
+    # Every 6 hours. Note the leading 0 -- "* */6 * * *" would fire every
+    # minute of every 6th hour, which is 240 runs a day.
+    - cron: "0 */6 * * *"
+
+  workflow_dispatch:
+
+  push:
+    branches: [main]
+    # Deliberately does not include assets/**, so this workflow's own commit
+    # cannot retrigger it. The [skip ci] tag below is the second guard.
+    paths:
+      - ".github/scripts/**"
+      - ".github/fonts/**"
+      - ".github/workflows/panels.yml"
+      - "contributions.json"
+      - "projects.json"
+
+concurrency:
+  group: panels
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install fonttools
+        run: pip install "fonttools>=4.50"
+
+      - name: Refresh live GitHub data
+        env:
+          # Anonymous is 60 req/hr; the token lifts that to 5000. fetch_data.py
+          # exits 0 even when requests fail -- panels fall back to cached values.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/fetch_data.py
+
+      - name: Build panels
+        run: |
+          python .github/scripts/build_banner.py
+          python .github/scripts/build_contributions.py
+          python .github/scripts/build_projects.py
+
+      - name: Commit only if something actually changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets contributions.json projects.json
+          if git diff --cached --quiet; then
+            echo "panels unchanged, nothing to commit"
+          else
+            git commit -m "chore(panels): refresh generated SVGs [skip ci]"
+            git push
+          fi

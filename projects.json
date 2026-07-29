@@ -1,0 +1,74 @@
+{
+  "figure": "fig. 3 — three systems, drawn to scale",
+  "note": "Set \"repo\" to null for a project with no public repository; the card then renders entirely from the values below. Everything under \"cache\" is written by .github/scripts/fetch_data.py — don't hand-edit it.",
+  "projects": [
+    {
+      "name": "Sofi Check",
+      "repo": "Hamza-ali1223/soficheck-frontend",
+      "blurb": "Reads a project proposal and finds the ones already built — vector embeddings over past work, semantic search for near-misses.",
+      "tags": [
+        "Spring AI",
+        "Qdrant",
+        "RAG"
+      ],
+      "languages": {
+        "TypeScript": 62,
+        "Java": 30,
+        "CSS": 8
+      },
+      "cache": {
+        "stars": 0,
+        "forks": 0,
+        "pushed_at": "2026-04-15",
+        "url": "https://github.com/Hamza-ali1223/soficheck-frontend",
+        "languages": {
+          "TypeScript": 82227,
+          "JavaScript": 4235,
+          "CSS": 4209,
+          "HTML": 1126
+        }
+      }
+    },
+    {
+      "name": "PulseTrack",
+      "repo": "Hamza-ali1223/PulseTrack_Patient-Production-Backend",
+      "blurb": "A healthcare backend split into services that speak only through Kafka and gRPC. Events fan out; nothing shares a database.",
+      "tags": [
+        "Kafka KRaft",
+        "gRPC",
+        "AWS CDK"
+      ],
+      "languages": {
+        "Java": 94,
+        "Dockerfile": 4,
+        "Shell": 2
+      },
+      "cache": {
+        "stars": 0,
+        "forks": 0,
+        "pushed_at": "2026-01-08",
+        "url": "https://github.com/Hamza-ali1223/PulseTrack_Patient-Production-Backend",
+        "languages": {
+          "Java": 77509,
+          "Shell": 2669,
+          "Dockerfile": 1878
+        }
+      }
+    },
+    {
+      "name": "DocSpot",
+      "repo": null,
+      "blurb": "Appointment scheduling with the calls attached — OAuth2 across mobile and backend, WebSocket signalling for the consultation.",
+      "tags": [
+        "React Native",
+        "OAuth2",
+        "WebSocket"
+      ],
+      "languages": {
+        "TypeScript": 58,
+        "Java": 42
+      },
+      "cache": {}
+    }
+  ]
+}
