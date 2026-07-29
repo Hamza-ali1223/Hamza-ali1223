@@ -79,13 +79,21 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 ## 06 — Contact
 
 <div align="left">
+
   <a href="mailto:tenacioushamza@gmail.com">
-    <img src="https://img.shields.io/static/v1?message=tenacioushamza@gmail.com&logo=gmail&label=&color=0B1F17&logoColor=FF6B35&labelColor=0B1F17&style=flat-square" height="34" alt="Email" />
+    <img src="https://img.shields.io/static/v1?message=tenacioushamza@gmail.com&logo=gmail&label=&color=0B1F17&logoColor=FF6B35&labelColor=0B1F17&style=flat-square" height="40" alt="Email" />
   </a>
-  <a href="https://www.linkedin.com/in/hamza-ali-notion-obsidian/" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0B1F17&logoColor=A8BCAE&labelColor=0B1F17&style=flat-square" height="34" alt="LinkedIn" />
+
+  <img width="20" />
+
+  <a href="https://www.linkedin.com/in/hamza-codes" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0B1F17&logoColor=A8BCAE&labelColor=0B1F17&style=flat-square" height="40" alt="LinkedIn" />
   </a>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=Hamza-ali1223.Hamza-ali1223&color=0B1F17" height="34" alt="Visitors" />
+
+  <img width="20" />
+
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Hamza-ali1223.Hamza-ali1223&color=0B1F17" height="40" alt="Visitors" />
+
 </div>
 
 ###
