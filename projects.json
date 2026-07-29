@@ -72,7 +72,13 @@
         "stars": 0,
         "forks": 0,
         "pushed_at": "2025-07-18",
-        "url": "https://github.com/Hamza-ali1223/Docspot-Application"
+        "url": "https://github.com/Hamza-ali1223/Docspot-Application",
+        "languages": {
+          "TypeScript": 121284,
+          "JavaScript": 50582,
+          "Kotlin": 2351,
+          "Ruby": 1546
+        }
       }
     }
   ]
