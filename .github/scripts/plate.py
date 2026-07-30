@@ -2,9 +2,9 @@
 
 Every panel on the profile is a plate from the same imaginary field guide: the
 same double-rule frame, the same graph-paper ground, the same numbered header
-and italic figure caption. This module owns that language so the three builders
-(`build_banner`, `build_contributions`, `build_projects`) stay purely about
-their own subject.
+and italic figure caption. This module owns that language so the builders
+(`build_banner`, `build_contributions`, `build_projects`, `build_stats`,
+`build_contact`) stay purely about their own subject.
 
 THE INVARIANT, which every caller depends on
 --------------------------------------------

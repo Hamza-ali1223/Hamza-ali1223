@@ -19,6 +19,7 @@ on:
       - "contributions.json"
       - "projects.json"
       - "stats.json"
+      - "contact.json"
 
 concurrency:
   group: panels
@@ -54,12 +55,13 @@ jobs:
           python .github/scripts/build_contributions.py
           python .github/scripts/build_projects.py
           python .github/scripts/build_stats.py
+          python .github/scripts/build_contact.py
 
       - name: Commit only if something actually changed
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets contributions.json projects.json stats.json
+          git add assets contributions.json projects.json stats.json contact.json
           if git diff --cached --quiet; then
             echo "panels unchanged, nothing to commit"
           else

@@ -1,0 +1,28 @@
+{
+  "figure": "fig. 5 — the correspondence, and where to send it",
+  "note": "Hand-written throughout. Unlike the other three data files this one has no \"cache\" block and fetch_data.py never opens it — nothing here comes from the API. The \"href\" values are the source for the Markdown link row under the plate in README.md: the plate itself carries no anchors, because GitHub proxies README SVGs through camo and renders them as <img>, where links inside the document do not resolve. Change a URL here and in that link row together.",
+  "open_to": "Write to me about event-driven systems — Kafka topologies, gRPC boundaries, or a service that has outgrown its database.",
+  "location": "JAMSHORO, PAKISTAN  ·  UTC+5",
+  "channels": [
+    {
+      "label": "EMAIL",
+      "value": "tenacioushamza@gmail.com",
+      "href": "mailto:tenacioushamza@gmail.com"
+    },
+    {
+      "label": "LINKEDIN",
+      "value": "in/hamza-codes",
+      "href": "https://www.linkedin.com/in/hamza-codes"
+    },
+    {
+      "label": "PORTFOLIO",
+      "value": "portfolio-tau-tawny-62.vercel.app",
+      "href": "https://portfolio-tau-tawny-62.vercel.app"
+    },
+    {
+      "label": "GITHUB",
+      "value": "@Hamza-ali1223",
+      "href": "https://github.com/Hamza-ali1223"
+    }
+  ]
+}

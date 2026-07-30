@@ -78,41 +78,41 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
 
 ## 06 — Contact
 
-<div align="left">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/contact-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/contact-light.svg">
+  <img alt="Correspondence — email, LinkedIn, portfolio and GitHub" src="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/contact-dark.svg" width="100%">
+</picture>
 
-  <a href="mailto:tenacioushamza@gmail.com">
-    <img src="https://img.shields.io/static/v1?message=tenacioushamza@gmail.com&logo=gmail&label=&color=0B1F17&logoColor=FF6B35&labelColor=0B1F17&style=flat-square" height="40" alt="Email" />
-  </a>
-
-  <img width="20" />
-
-  <a href="https://www.linkedin.com/in/hamza-codes" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0B1F17&logoColor=A8BCAE&labelColor=0B1F17&style=flat-square" height="40" alt="LinkedIn" />
-  </a>
-
-  <img width="20" />
-
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=Hamza-ali1223.Hamza-ali1223&color=0B1F17" height="40" alt="Visitors" />
-
-</div>
+[Email](mailto:tenacioushamza@gmail.com)  ·  [LinkedIn](https://www.linkedin.com/in/hamza-codes)  ·  [Portfolio](https://portfolio-tau-tawny-62.vercel.app)  ·  [GitHub](https://github.com/Hamza-ali1223)
 
 ###
 
 <!--
-  The three plates above are generated, not hand-drawn.
+  The five plates above are generated, not hand-drawn.
 
     contributions.json  ->  assets/contributions-*.svg
     projects.json       ->  assets/projects-*.svg
     stats.json          ->  assets/stats-*.svg
+    contact.json        ->  assets/contact-*.svg
     build_banner.py     ->  assets/banner-*.svg
 
   To add a contribution or a project, edit the JSON and nothing else. The
   workflow in .github/workflows/panels.yml refreshes live GitHub data and
-  rebuilds all eight SVGs every 6 hours, committing only when the bytes change.
+  rebuilds all ten SVGs every 6 hours, committing only when the bytes change.
 
   05 used to be three github-readme-stats cards. Its public Vercel deployment
   answers 503 DEPLOYMENT_PAUSED whenever it trips the free tier, so two of the
   three were permanently broken images. Plate IV replaces them from the REST API.
+
+  06 used to be two img.shields.io badges and a visitor counter -- the same
+  dependency again, and the one block on the page that ignored the reader's
+  theme, since the badges hardcoded the dark-mode forest as their colour.
+  Plate V replaces them. The links live in Markdown underneath rather than
+  inside the SVG because GitHub serves README SVGs through camo as <img>, where
+  an anchor in the document never resolves. contact.json is hand-written:
+  fetch_data.py does not touch it, and its href values and that link row have to
+  be changed together.
 
   Everything animates in SMIL, with no CSS or JS, because GitHub renders these
   in image context. Glyphs are outlined for the same reason -- a webfont would
