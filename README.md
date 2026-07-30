@@ -58,14 +58,6 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
   <img alt="GitHub statistics and language mix" src="https://raw.githubusercontent.com/Hamza-ali1223/Hamza-ali1223/main/assets/stats-dark.svg" width="100%">
 </picture>
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Hamza-ali1223&mode=daily&hide_border=true&background=0B1F17&stroke=1A3327&ring=FF6B35&fire=FF6B35&currStreakNum=E2E9E3&currStreakLabel=FF6B35&sideNums=A8BCAE&sideLabels=A8BCAE&dates=6B8A76">
-    <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=Hamza-ali1223&mode=daily&hide_border=true&background=EDE8DF&stroke=D9D2C6&ring=C8501E&fire=C8501E&currStreakNum=161412&currStreakLabel=C8501E&sideNums=3A3631&sideLabels=3A3631&dates=7A736A">
-    <img height="170" alt="Contribution streak" src="https://streak-stats.demolab.com?user=Hamza-ali1223&mode=daily&hide_border=true&background=0B1F17&stroke=1A3327&ring=FF6B35&fire=FF6B35&currStreakNum=E2E9E3&currStreakLabel=FF6B35&sideNums=A8BCAE&sideLabels=A8BCAE&dates=6B8A76">
-  </picture>
-</div>
-
 ###
 
 <picture>
@@ -104,6 +96,11 @@ that survive being deployed separately. Currently in Jamshoro, Pakistan.
   05 used to be three github-readme-stats cards. Its public Vercel deployment
   answers 503 DEPLOYMENT_PAUSED whenever it trips the free tier, so two of the
   three were permanently broken images. Plate IV replaces them from the REST API.
+
+  A streak-stats.demolab.com card outlived them here and has now gone too. Its
+  failure mode was the worst of the lot: it answers 200 with a sad face reading
+  "Failed to retrieve contributions" drawn into the SVG, so GitHub's camo proxy
+  caches the error as a perfectly valid image and serves it for hours.
 
   06 used to be two img.shields.io badges and a visitor counter -- the same
   dependency again, and the one block on the page that ignored the reader's
