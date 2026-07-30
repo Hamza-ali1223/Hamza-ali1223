@@ -45,19 +45,23 @@ DIVIDER_X = 608
 
 # Left: the invitation, then where I am.
 #
-# NOTE_OPSZ is the whole readability story. Fraunces' optical size runs from the
-# display cut at 144 -- high contrast, hairline joins, meant for a name at 72px
-# -- down to the text cut at 9. This is a sentence, not a name, and it is read
-# at ~18px after GitHub's downscale, so it takes the text end of the axis:
-# sturdier strokes, more open counters, a taller x-height. Same family, same
-# voice, legible at size. At 14 the copy still wraps to three lines.
-NOTE_SIZE, NOTE_MAX_W, NOTE_OPSZ = 26, 520, 14
-NOTE_Y, NOTE_LEAD = 140, 36
+# Set in Newsreader rather than the Fraunces the other plates use for display.
+# This is the only running prose in the system -- three lines read at roughly
+# 20px once GitHub scales the plate -- and Fraunces is a display face even on
+# its text cut. NOTE_OPSZ tracks the size it is actually read at, which is the
+# whole point of an optical-size axis.
+#
+# Newsreader also sets narrower than Fraunces, which paid for the size: 29px
+# still wraps to three lines at 500px of the 520 available.
+NOTE_FAMILY = "newsreader"
+NOTE_SIZE, NOTE_MAX_W, NOTE_OPSZ = 29, 520, 18
+NOTE_WGHT = 600
+NOTE_Y, NOTE_LEAD = 140, 40
 LOC_DY = 30                      # under the last line of the invitation
 
 # Right: label ...... value, four rows, bottoming out level with the location.
 CHAN_X = 648
-ROW_Y, ROW_LEAD = 148, 32
+ROW_Y, ROW_LEAD = 152, 32
 LABEL_SIZE, VALUE_SIZE = 12, 15
 LOC_SIZE = 12
 LEADER_GAP = 14                  # air either side of the dotted leader
@@ -88,8 +92,8 @@ def value_budget(label):
 
 def note_lines(text):
     """The invitation, wrapped to the left column."""
-    return wrap(text, "fraunces", NOTE_SIZE, NOTE_MAX_W, 0.0, max_lines=3,
-                opsz=NOTE_OPSZ, wght=600, WONK=1)
+    return wrap(text, NOTE_FAMILY, NOTE_SIZE, NOTE_MAX_W, 0.0, max_lines=3,
+                opsz=NOTE_OPSZ, wght=NOTE_WGHT)
 
 
 def build(name, doc):
@@ -119,8 +123,8 @@ def build(name, doc):
     lines = note_lines(doc.get("open_to", ""))
     for i, ln in enumerate(lines):
         p.append(tl.group(
-            path(ln, "fraunces", NOTE_SIZE, PAD_L, NOTE_Y + i * NOTE_LEAD,
-                 fill=ink, opsz=NOTE_OPSZ, wght=600, WONK=1),
+            path(ln, NOTE_FAMILY, NOTE_SIZE, PAD_L, NOTE_Y + i * NOTE_LEAD,
+                 fill=ink, opsz=NOTE_OPSZ, wght=NOTE_WGHT),
             0.75 + i * 0.09, 0.6))
 
     loc_y = NOTE_Y + (len(lines) - 1) * NOTE_LEAD + LOC_DY
@@ -165,8 +169,8 @@ def main():
     print(f"  {len(channels)} channel(s)")
 
     lines = note_lines(doc.get("open_to", ""))
-    widest = max((measure(ln, "fraunces", NOTE_SIZE, opsz=NOTE_OPSZ, wght=600,
-                          WONK=1) for ln in lines), default=0)
+    widest = max((measure(ln, NOTE_FAMILY, NOTE_SIZE, opsz=NOTE_OPSZ,
+                          wght=NOTE_WGHT) for ln in lines), default=0)
     print(f"  invitation -> {len(lines)} line(s), widest {widest:.0f}px "
           f"(column is {NOTE_MAX_W}px)")
 

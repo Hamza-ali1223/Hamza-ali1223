@@ -26,15 +26,25 @@ FONT_DIR = Path(__file__).resolve().parent.parent / "fonts"
 FONTS = {
     "fraunces": FONT_DIR / "Fraunces.ttf",
     "fraunces-italic": FONT_DIR / "Fraunces-Italic.ttf",
+    "newsreader": FONT_DIR / "Newsreader.ttf",
     "mono": FONT_DIR / "JetBrainsMono.ttf",
 }
 
 # Axis defaults per family. Fraunces' opsz is the interesting one: at 144 you
 # get the display cut (high contrast, delicate joins), at 9 the text cut. WONK=1
 # enables the wonky alternates, which is where the face gets its character.
+#
+# Newsreader is the running-copy face. Fraunces is a display type at heart --
+# even on its text cut it is doing something characterful with every stroke,
+# which is right for a name at 72px and tiring for a sentence at 26px that
+# GitHub then scales to about 0.7x. Newsreader is drawn for continuous reading
+# at small sizes and still has a voice, so the plates keep theirs. Its upem is
+# 2000 rather than 1000; nothing here cares, since every metric is scaled by
+# size/unitsPerEm.
 DEFAULT_AXES = {
     "fraunces": {"opsz": 144, "wght": 600, "SOFT": 0, "WONK": 1},
     "fraunces-italic": {"opsz": 60, "wght": 400, "SOFT": 0, "WONK": 1},
+    "newsreader": {"opsz": 18, "wght": 600},
     "mono": {"wght": 400},
 }
 
