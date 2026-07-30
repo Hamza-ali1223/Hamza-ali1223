@@ -43,6 +43,20 @@ def row_y(i):
     return BODY_TOP + ROW_H * i + NODE_DY
 
 
+def stock_label(items):
+    """What the stock at the root of the diagram is called.
+
+    Derived rather than declared. With one upstream the stock *is* that
+    repository and says so; with several, naming any one of them would be a
+    lie about where the other grafts were taken from, so it states the count
+    instead. Each row already carries its own repo, so nothing is lost.
+    """
+    repos = list(dict.fromkeys(c.get("repo") for c in items if c.get("repo")))
+    if not repos:
+        return "UPSTREAM"
+    return repos[0] if len(repos) == 1 else f"{len(repos)} UPSTREAMS"
+
+
 def dots(x1, x2, y, colour, op, tl, begin):
     """A dotted leader.
 
@@ -106,7 +120,7 @@ def build(name, doc):
     p.append(tl.group(
         f'<path d="M{ROOT_X} {axis_y - 9}V{axis_y - 32}" stroke="{line_c}" '
         f'stroke-opacity="{strong_o}" stroke-width="1"/>', 1.0, 0.45))
-    p.append(tl.mono(doc.get("upstream", "UPSTREAM"), ROOT_X, axis_y - 42, 11,
+    p.append(tl.mono(stock_label(items), ROOT_X, axis_y - 42, 11,
                      soft, 1.05, anchor="middle", track=0.5))
 
     # The junction is where the work leaves, so it takes the accent -- the same

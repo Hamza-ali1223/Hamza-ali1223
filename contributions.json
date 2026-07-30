@@ -1,7 +1,6 @@
 {
   "figure": "fig. 2 — grafts taken upstream",
-  "upstream": "OtterMind/Chat2DB",
-  "note": "Add a contribution by appending repo + pr + tags. Everything under \"cache\" is written by .github/scripts/fetch_data.py — don't hand-edit it.",
+  "note": "Add a contribution by appending repo + pr + tags. Everything under \"cache\" is written by .github/scripts/fetch_data.py — don't hand-edit it. The label on the stock is derived from the repos below, not declared here: one upstream and it names that repo, several and it states the count.",
   "contributions": [
     {
       "repo": "OtterMind/Chat2DB",
@@ -34,6 +33,23 @@
         "deletions": 0,
         "changed_files": 2,
         "merged_at": "2026-07-25"
+      }
+    },
+    {
+      "repo": "AWS-Cloud-Club-Mehran-UET/HacktoberFest-2.0",
+      "pr": 30,
+      "tags": [
+        "Docker",
+        "ML",
+        "hackathon"
+      ],
+      "cache": {
+        "title": "[Team Lowkey-Legends] Final Submission – Advance Docker, Patients Prediction, Lego Prediction",
+        "state": "merged",
+        "additions": 312728,
+        "deletions": 0,
+        "changed_files": 32,
+        "merged_at": "2025-10-20"
       }
     }
   ]
