@@ -35,6 +35,8 @@ FOOT_RULE_Y, FOOT_Y = 314, 340
 DIVIDER_X = 608
 COL_X = (56, 246, 436)           # three figure columns
 FIG_Y = (186, 268)               # numeral baselines, two rows
+# 46 rather than 44, cap-matched off Fraunces -- see typeset.DEFAULT_AXES.
+FIG_SIZE, FIG_OPSZ = 46, 48
 LABEL_DY = 20                    # label sits this far under its numeral
 
 CHART_X = 648
@@ -86,8 +88,8 @@ def build(name, doc):
         y = FIG_Y[i // 3]
         b = 0.7 + i * 0.11
         p.append(tl.group(
-            path(value, "fraunces", 44, x, y, fill=ink,
-                 opsz=144, wght=600, WONK=1),
+            path(value, "newsreader", FIG_SIZE, x, y, fill=ink,
+                 opsz=FIG_OPSZ, wght=600),
             b, 0.6))
         p.append(tl.mono(label, x, y + LABEL_DY, 10, mute, b + 0.12, track=0.6))
 
@@ -146,7 +148,7 @@ def main():
         print("  ! stats.json has no cache -- run fetch_data.py first")
 
     # Widest numeral decides whether the three columns can hold their figures.
-    widest = max((measure(v, "fraunces", 44, opsz=144, wght=600, WONK=1)
+    widest = max((measure(v, "newsreader", FIG_SIZE, opsz=FIG_OPSZ, wght=600)
                   for v, _ in figures(cache)), default=0)
     print(f"  widest figure -> {widest:.0f}px (column is 190px)")
 

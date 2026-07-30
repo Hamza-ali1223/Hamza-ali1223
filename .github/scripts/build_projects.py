@@ -40,6 +40,9 @@ CARD_Y, CARD_H, GAP = 118, 264, 26
 INSET = 22                       # card padding
 
 NAME_DY, RULE_DY = 46, 62
+# 29 rather than 26: a card name is text, not display, so it is x-height
+# matched off Fraunces rather than cap matched -- see typeset.DEFAULT_AXES.
+NAME_SIZE, NAME_OPSZ = 29, 24
 BLURB_DY, BLURB_LEAD = 90, 18
 TAGS_DY = 158
 DONUT_DY, DONUT_R, DONUT_W = 206, 26, 7
@@ -128,11 +131,11 @@ def card(x, w, prj, t, tl, begin):
             f'<path d="{star(x + w - INSET - count_w - 11, CARD_Y + NAME_DY - 4)}" '
             f'fill="{mute}"/>', begin + 0.35, 0.5))
 
-    name = fit(prj.get("name", ""), "fraunces", 26, inner - star_w,
-               opsz=144, wght=600, WONK=1)
+    name = fit(prj.get("name", ""), "newsreader", NAME_SIZE, inner - star_w,
+               opsz=NAME_OPSZ, wght=600)
     p.append(tl.group(
-        path(name, "fraunces", 26, tx, CARD_Y + NAME_DY, fill=ink,
-             opsz=144, wght=600, WONK=1),
+        path(name, "newsreader", NAME_SIZE, tx, CARD_Y + NAME_DY, fill=ink,
+             opsz=NAME_OPSZ, wght=600),
         begin + 0.2, 0.6))
     p.append(tl.rule(tx, CARD_Y + RULE_DY, x + w - INSET, line_c, strong_o,
                      begin + 0.3, 0.6))

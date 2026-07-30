@@ -45,14 +45,13 @@ DIVIDER_X = 608
 
 # Left: the invitation, then where I am.
 #
-# Set in Newsreader rather than the Fraunces the other plates use for display.
 # This is the only running prose in the system -- three lines read at roughly
-# 20px once GitHub scales the plate -- and Fraunces is a display face even on
-# its text cut. NOTE_OPSZ tracks the size it is actually read at, which is the
-# whole point of an optical-size axis.
+# 20px once GitHub scales the plate -- and it is what moved the whole profile
+# off Fraunces onto Newsreader. NOTE_OPSZ tracks the size the type is actually
+# read at, which is the point of an optical-size axis.
 #
-# Newsreader also sets narrower than Fraunces, which paid for the size: 29px
-# still wraps to three lines at 500px of the 520 available.
+# 29px against the 26 it started at: Newsreader's x-height is 0.426em to
+# Fraunces' 0.482em, and it still wraps to three lines at 500px of 520.
 NOTE_FAMILY = "newsreader"
 NOTE_SIZE, NOTE_MAX_W, NOTE_OPSZ = 29, 520, 18
 NOTE_WGHT = 600

@@ -164,10 +164,15 @@ def header(t, tl, left, right, pad_l, pad_r, y=72, rule_y=92, begin=0.5):
 
 
 def footer(t, tl, caption, pad_l, pad_r, rule_y, y, begin=2.0):
-    """Closing rule and the italic Fraunces figure caption."""
+    """Closing rule and the italic figure caption.
+
+    17px rather than the 15 this was in Fraunces: Newsreader's x-height is
+    0.426em against Fraunces' 0.482em, so the same nominal size would have read
+    noticeably smaller on the one line of type every plate shares.
+    """
     line_c, line_o = t["line"]
-    el = path(caption, "fraunces-italic", 15, pad_l, y,
-              fill=t["mute"], opsz=60, wght=400, WONK=1)
+    el = path(caption, "newsreader-italic", 17, pad_l, y,
+              fill=t["mute"], opsz=14, wght=400)
     return [
         tl.rule(pad_l, rule_y, pad_r, line_c, line_o, begin, 0.8),
         tl.group(el, begin + 0.15, 0.7),

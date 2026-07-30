@@ -5,7 +5,7 @@ Why outlines instead of <text>: SVGs embedded in a GitHub README render in
 @import silently fails and everything falls back to the platform default --
 which is why essentially every profile SVG on GitHub is monospace and they all
 look identical. Outlining the glyphs removes the font dependency entirely, so
-Fraunces renders byte-identically in every browser and every renderer.
+Newsreader renders byte-identically in every browser and every renderer.
 
 Trade-off: outlined text is not selectable or searchable. For a banner that is
 fine. Generated panels whose text changes (project names, PR titles) use an
@@ -24,27 +24,33 @@ from fontTools.varLib import instancer
 FONT_DIR = Path(__file__).resolve().parent.parent / "fonts"
 
 FONTS = {
-    "fraunces": FONT_DIR / "Fraunces.ttf",
-    "fraunces-italic": FONT_DIR / "Fraunces-Italic.ttf",
     "newsreader": FONT_DIR / "Newsreader.ttf",
+    "newsreader-italic": FONT_DIR / "Newsreader-Italic.ttf",
     "mono": FONT_DIR / "JetBrainsMono.ttf",
 }
 
-# Axis defaults per family. Fraunces' opsz is the interesting one: at 144 you
-# get the display cut (high contrast, delicate joins), at 9 the text cut. WONK=1
-# enables the wonky alternates, which is where the face gets its character.
+# Axis defaults per family.
 #
-# Newsreader is the running-copy face. Fraunces is a display type at heart --
-# even on its text cut it is doing something characterful with every stroke,
+# Newsreader replaced Fraunces across every plate. Fraunces is a display type at
+# heart -- even on its text cut it does something characterful with each stroke,
 # which is right for a name at 72px and tiring for a sentence at 26px that
-# GitHub then scales to about 0.7x. Newsreader is drawn for continuous reading
-# at small sizes and still has a voice, so the plates keep theirs. Its upem is
-# 2000 rather than 1000; nothing here cares, since every metric is scaled by
-# size/unitsPerEm.
+# GitHub then scales to about 0.7x. Newsreader is drawn for reading at small
+# sizes and still has a voice, so the plates keep theirs.
+#
+# opsz is the axis that matters, and it means what it says: set it to the size
+# the type is actually *read* at, not the size it is drawn at. Everything here
+# is drawn into a 1200-wide plate that GitHub renders at roughly 0.7x, so a
+# 26px string is read at ~18px and wants opsz 18, not 26.
+#
+# Sizes were carried over from Fraunces by matching cap height for display type
+# (0.700em -> 0.670em, so x1.045) and x-height for text (0.482em -> 0.426em, so
+# x1.13) -- the same nominal px in a new face is not the same apparent size.
+#
+# Newsreader's upem is 2000 rather than 1000. Nothing here cares: every metric
+# is scaled by size/unitsPerEm.
 DEFAULT_AXES = {
-    "fraunces": {"opsz": 144, "wght": 600, "SOFT": 0, "WONK": 1},
-    "fraunces-italic": {"opsz": 60, "wght": 400, "SOFT": 0, "WONK": 1},
     "newsreader": {"opsz": 18, "wght": 600},
+    "newsreader-italic": {"opsz": 14, "wght": 400},
     "mono": {"wght": 400},
 }
 
@@ -68,7 +74,7 @@ def _resolve(family: str, axes: dict) -> TTFont:
     return _instance(family, tuple(sorted(merged.items())))
 
 
-def outline(text, family="fraunces", size=48, x=0, y=0, tracking=0.0, **axes):
+def outline(text, family="newsreader", size=48, x=0, y=0, tracking=0.0, **axes):
     """Render `text` as a single SVG path `d` string.
 
     `x`/`y` are the start of the baseline. `tracking` is extra letter-spacing in
@@ -99,7 +105,7 @@ def outline(text, family="fraunces", size=48, x=0, y=0, tracking=0.0, **axes):
     return pen.getCommands(), cursor - x
 
 
-def measure(text, family="fraunces", size=48, tracking=0.0, **axes) -> float:
+def measure(text, family="newsreader", size=48, tracking=0.0, **axes) -> float:
     """Advance width of `text` without building the outline."""
     font = _resolve(family, axes)
     scale = size / font["head"].unitsPerEm
@@ -112,7 +118,7 @@ def measure(text, family="fraunces", size=48, tracking=0.0, **axes) -> float:
     return total
 
 
-def fit(text, family="fraunces", size=48, max_w=0, tracking=0.0, **axes) -> str:
+def fit(text, family="newsreader", size=48, max_w=0, tracking=0.0, **axes) -> str:
     """Truncate `text` with an ellipsis until it fits inside `max_w`.
 
     Panels render strings that come from the GitHub API -- PR titles, repo
@@ -131,7 +137,7 @@ def fit(text, family="fraunces", size=48, max_w=0, tracking=0.0, **axes) -> str:
     return (cut + ell) if cut else ell
 
 
-def wrap(text, family="fraunces", size=48, max_w=0, tracking=0.0,
+def wrap(text, family="newsreader", size=48, max_w=0, tracking=0.0,
          max_lines=3, **axes) -> list:
     """Greedy word wrap to a measured pixel width.
 
@@ -158,7 +164,7 @@ def wrap(text, family="fraunces", size=48, max_w=0, tracking=0.0,
     return lines
 
 
-def path(text, family="fraunces", size=48, x=0, y=0, tracking=0.0,
+def path(text, family="newsreader", size=48, x=0, y=0, tracking=0.0,
          fill="#000", opacity=None, anchor="start", extra="", **axes):
     """Full <path> element, with `anchor` handling right/centre alignment.
 

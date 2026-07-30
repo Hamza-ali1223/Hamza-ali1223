@@ -35,7 +35,9 @@ JUNCTION_X = 215
 LABEL_X, LEADER_X = 452, 444
 
 CAP_X = 648
-NAME_Y, NAME_SIZE = 182, 72
+# 75 rather than 72: Newsreader's cap height is 0.670em to Fraunces' 0.700em,
+# so it takes ~4.5% more nominal size to stand the same height on the page.
+NAME_Y, NAME_SIZE, NAME_OPSZ = 182, 75, 60
 CAP_RULE_Y = 202
 ROLE_Y, STACK_Y, STATUS_Y = 230, 256, 290
 
@@ -112,11 +114,17 @@ def build(name: str) -> str:
                      anchor="middle", track=0.5))
 
     # --- caption block -----------------------------------------------------
-    name_el = path("Hamza Ali", "fraunces", NAME_SIZE, CAP_X, NAME_Y,
-                   fill=ink, opsz=144, wght=600, WONK=1)
+    name_el = path("Hamza Ali", "newsreader", NAME_SIZE, CAP_X, NAME_Y,
+                   fill=ink, opsz=NAME_OPSZ, wght=600)
     p.append(f'<g opacity="1">{name_el}{tl.rise(1.0, 16, 1.2)}</g>')
 
-    p.append(tl.rule(CAP_X, CAP_RULE_Y, CAP_X + 300, strong_c, strong_o, 1.5, 0.8))
+    # The rule is exactly as long as the name above it. It used to be a
+    # hardcoded 300, which happened to be the width Fraunces set "Hamza Ali" at;
+    # measuring keeps that true through a change of face or of name.
+    name_w = measure("Hamza Ali", "newsreader", NAME_SIZE, opsz=NAME_OPSZ,
+                     wght=600)
+    p.append(tl.rule(CAP_X, CAP_RULE_Y, CAP_X + round(name_w), strong_c,
+                     strong_o, 1.5, 0.8))
     p.append(tl.mono("Backend Architect  ·  Systems Thinker", CAP_X, ROLE_Y, 14,
                      soft, 1.55, track=0.2))
     p.append(tl.mono(STACK, CAP_X, STACK_Y, 12, mute, 1.7, track=0.2))
@@ -139,10 +147,11 @@ def build(name: str) -> str:
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    name_w = measure("Hamza Ali", "fraunces", NAME_SIZE, opsz=144, wght=600, WONK=1)
+    name_w = measure("Hamza Ali", "newsreader", NAME_SIZE, opsz=NAME_OPSZ,
+                     wght=600)
     print(f'  name "Hamza Ali" -> {name_w:.1f}px wide '
           f"(budget {PAD_R - CAP_X}px, ends x={CAP_X + name_w:.0f})")
-    print(f'  caption -> {measure(CAPTION, "fraunces-italic", 15, opsz=60):.1f}px')
+    print(f'  caption -> {measure(CAPTION, "newsreader-italic", 17, opsz=14):.1f}px')
     print(f'  stack   -> {measure(STACK, "mono", 12, 0.2):.1f}px')
 
     for theme in ("dark", "light"):
