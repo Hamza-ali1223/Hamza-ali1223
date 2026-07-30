@@ -30,27 +30,37 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 OUT = ROOT / "assets"
 DATA = ROOT / "contact.json"
 
-W, H = 1200, 300
+# Taller than the 300 it needs, because GitHub scales a 1200-wide plate down to
+# whatever the README column is -- about 0.7x on a desktop. Every size here is
+# therefore quoted about 40% larger than it will be read at, and the height
+# buys the room for that.
+W, H = 1200, 340
 
 # --- layout -----------------------------------------------------------------
 PAD_L, PAD_R = 56, 1144
 HEAD_Y, HEAD_RULE_Y = 72, 92
-FOOT_RULE_Y, FOOT_Y = 234, 260
+FOOT_RULE_Y, FOOT_Y = 274, 300
 
 DIVIDER_X = 608
 
-# Left: the invitation, then where I am. Three wrapped lines plus the location
-# is what fits between the two rules; the leading is tight for display type
-# because the alternative is the location sitting on the closing rule.
-NOTE_SIZE, NOTE_MAX_W = 26, 520
-NOTE_Y, NOTE_LEAD = 126, 31
-LOC_DY = 26                      # under the last line of the invitation
+# Left: the invitation, then where I am.
+#
+# NOTE_OPSZ is the whole readability story. Fraunces' optical size runs from the
+# display cut at 144 -- high contrast, hairline joins, meant for a name at 72px
+# -- down to the text cut at 9. This is a sentence, not a name, and it is read
+# at ~18px after GitHub's downscale, so it takes the text end of the axis:
+# sturdier strokes, more open counters, a taller x-height. Same family, same
+# voice, legible at size. At 14 the copy still wraps to three lines.
+NOTE_SIZE, NOTE_MAX_W, NOTE_OPSZ = 26, 520, 14
+NOTE_Y, NOTE_LEAD = 140, 36
+LOC_DY = 30                      # under the last line of the invitation
 
 # Right: label ...... value, four rows, bottoming out level with the location.
 CHAN_X = 648
-ROW_Y, ROW_LEAD = 140, 25
-LABEL_SIZE, VALUE_SIZE = 10, 13
-LEADER_GAP = 12                  # air either side of the dotted leader
+ROW_Y, ROW_LEAD = 148, 32
+LABEL_SIZE, VALUE_SIZE = 12, 15
+LOC_SIZE = 12
+LEADER_GAP = 14                  # air either side of the dotted leader
 LEADER_MIN = 24                  # a leader shorter than this reads as a typo
 
 
@@ -79,7 +89,7 @@ def value_budget(label):
 def note_lines(text):
     """The invitation, wrapped to the left column."""
     return wrap(text, "fraunces", NOTE_SIZE, NOTE_MAX_W, 0.0, max_lines=3,
-                opsz=144, wght=600, WONK=1)
+                opsz=NOTE_OPSZ, wght=600, WONK=1)
 
 
 def build(name, doc):
@@ -106,21 +116,19 @@ def build(name, doc):
                       HEAD_Y, HEAD_RULE_Y)
 
     # --- the invitation ----------------------------------------------------
-    # The one piece of display type on the plate, so it takes the same Fraunces
-    # cut the project names do rather than inventing a third.
     lines = note_lines(doc.get("open_to", ""))
     for i, ln in enumerate(lines):
         p.append(tl.group(
             path(ln, "fraunces", NOTE_SIZE, PAD_L, NOTE_Y + i * NOTE_LEAD,
-                 fill=ink, opsz=144, wght=600, WONK=1),
+                 fill=ink, opsz=NOTE_OPSZ, wght=600, WONK=1),
             0.75 + i * 0.09, 0.6))
 
     loc_y = NOTE_Y + (len(lines) - 1) * NOTE_LEAD + LOC_DY
-    p.append(tl.mono(doc.get("location", ""), PAD_L, loc_y, 11, mute, 1.05,
-                     track=0.6))
+    p.append(tl.mono(doc.get("location", ""), PAD_L, loc_y, LOC_SIZE, mute,
+                     1.05, track=0.6))
 
     # Divider between the invitation and the addresses.
-    p.append(tl.draw_on(f"M{DIVIDER_X} 118V220", line_c, 0.6, 0.9, 102, 1,
+    p.append(tl.draw_on(f"M{DIVIDER_X} 122V256", line_c, 0.6, 0.9, 134, 1,
                         strong_o, cap="butt"))
 
     # --- the addresses -----------------------------------------------------
@@ -131,9 +139,11 @@ def build(name, doc):
         label = c.get("label", "")
         p.append(tl.mono(label, CHAN_X, y, LABEL_SIZE, mute, b, track=0.6))
 
+        # The address is the payload of the whole plate, so it takes full ink;
+        # ink_soft is for supporting text and this is not that.
         value = fit(c.get("value", ""), "mono", VALUE_SIZE,
                     value_budget(label), 0.2)
-        p.append(tl.mono(value, PAD_R, y, VALUE_SIZE, soft, b + 0.1,
+        p.append(tl.mono(value, PAD_R, y, VALUE_SIZE, ink, b + 0.1,
                          anchor="end", track=0.2))
 
         # Leader between the two, sitting on the x-height rather than the
@@ -155,8 +165,8 @@ def main():
     print(f"  {len(channels)} channel(s)")
 
     lines = note_lines(doc.get("open_to", ""))
-    widest = max((measure(ln, "fraunces", NOTE_SIZE, opsz=144, wght=600, WONK=1)
-                  for ln in lines), default=0)
+    widest = max((measure(ln, "fraunces", NOTE_SIZE, opsz=NOTE_OPSZ, wght=600,
+                          WONK=1) for ln in lines), default=0)
     print(f"  invitation -> {len(lines)} line(s), widest {widest:.0f}px "
           f"(column is {NOTE_MAX_W}px)")
 
