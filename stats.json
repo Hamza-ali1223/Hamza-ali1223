@@ -11,7 +11,7 @@
     "followers": 22,
     "since": "2023",
     "own_repos": 25,
-    "stars": 4,
+    "stars": 5,
     "languages": {
       "Java": 364223,
       "TypeScript": 228444,
@@ -19,7 +19,7 @@
       "JavaScript": 95196,
       "CSS": 16568
     },
-    "prs": 9,
+    "prs": 10,
     "prs_merged": 7
   }
 }
